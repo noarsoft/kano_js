@@ -1,0 +1,23 @@
+# Node modules and environment
+node_modules/
+.env
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Ignore all but important files
+!.gitignore
+!package.json
+!package-lock.json
+!vite.config.*
+!tsconfig.json
