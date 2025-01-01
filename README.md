@@ -63,7 +63,3 @@ This code implements K-Anonymization functionality in React, including bin creat
 - **Export Buttons**
 
 ---
-
-## Exported Component
-```javascript
-export default Kano;
