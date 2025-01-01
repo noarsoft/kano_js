@@ -23,7 +23,7 @@
 ---
 
 ### Learn More
-Visit [Noarsoft Privacy Tools](https://noarsoft.github.io/) for more resources and tools to enhance data privacy.
+Visit [Create Data Privacy Tools](https://noarsoft.github.io/) for more resources and tools to enhance data privacy.
 
 
 # Code Overview: K-Anonymization
