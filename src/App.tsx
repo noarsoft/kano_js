@@ -1,13 +1,25 @@
-import './App.css'
-import Kano from './components/Kano'
+import './App.css';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import ExcelToCSVDownloader from './components/ExcelToCSVDownloader';
+import CSVLoader from './components/CSVLoader';
+import KAnonymityDescription from './components/KAnonymityDescription';
 
 function App() {
-
   return (
     <>
-      <Kano></Kano>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<KAnonymityDescription />} />
+          <Route path="/ExcelToCSVDownloader" element={<ExcelToCSVDownloader />} />
+          <Route path="/CSVLoader" element={<CSVLoader />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

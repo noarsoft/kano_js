@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/anony_js/",
-})
+  base: "/kano_js/", // Replace with your repository name
+});

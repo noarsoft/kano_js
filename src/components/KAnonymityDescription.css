@@ -1,0 +1,74 @@
+/* General styles for the description container */
+.description-container {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Ensure content is left-aligned */
+  max-width: 800px; /* Optional: Set a max width for readability */
+  margin: 0 auto; /* Center container horizontally on the page */
+}
+
+/* Headings */
+.description-container h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+
+.description-container h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+/* Paragraphs */
+.description-container p {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Lists */
+.description-container ul,
+.description-container ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.description-container li {
+  margin-bottom: 5px;
+  text-align: left; /* Ensure list items are left-aligned */
+}
+
+/* Example boxes */
+.description-container .example-box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  text-align: left;
+}
+
+/* Highlighted text */
+.description-container .highlight {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Emphasized text */
+.description-container em {
+  color: #2980b9;
+}
+
+/* Footer */
+.description-container .footer {
+  margin-top: 20px;
+  font-style: italic;
+  color: #7f8c8d;
+  text-align: left;
+}

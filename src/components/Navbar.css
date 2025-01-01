@@ -1,0 +1,113 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  /* background-color: #333; */
+  color: white;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.styled-heading{
+  color: #ff5733; 
+  font-size: 2em; 
+  font-weight: bold; 
+}
+
+/* Navbar logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Navigation links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Add more space between buttons */
+}
+
+/* Navigation links */
+.nav-links a {
+  color: white; /* Default text color */
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem; /* Padding for button-like appearance */
+  background-color: #444; /* Default background color */
+  border-radius: 8px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  border: 1px solid transparent; /* Subtle border */
+}
+
+.nav-links a:hover {
+  color: #ffffff; /* Bright white text for better contrast */
+  background-color: #007bff; /* Clear blue background on hover */
+  border-color: #007bff; /* Border matches hover background */
+  box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.4); /* Add shadow on hover */
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 1rem; /* Add space between vertically stacked buttons */
+  }
+
+  .nav-links li {
+    margin: 0; /* Reset any margin for cleaner stacking */
+  }
+}
+
+
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00d8ff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    height: calc(100vh - 60px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+}
