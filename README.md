@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Code Overview: K-Anonymization with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This code implements K-Anonymization functionality in React, including bin creation, data generalization, information loss calculation, and a UI component for displaying and exporting results. Below is a breakdown of the functionality:
 
-Currently, two official plugins are available:
+## Core Functions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Generalization
+- **`generalizeColumn(data: number[], bins: number[]): string[]`**
+  - Maps numeric values into predefined bins and assigns labels like `0-29`.
 
-## Expanding the ESLint configuration
+### K-Anonymization
+- **`kAnonymize(df: DataFrame, listColumnsOrdinalInt: string[], listBinsColumnsOrdinalInt: BinMapping): DataFrame`**
+  - Applies generalization to specified columns using provided bins.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Grouping and Counting
+- **`groupByColumnAndAddCount(df: DataFrame, groupByColumns: string[]): DataFrame`**
+  - Groups rows by selected columns and counts occurrences.
 
-- Configure the top-level `parserOptions` property like this:
+### K-Anonymity Check
+- **`checkKAnonymity(generalizedDf: DataFrame, listColumns: string[], k: number): boolean`**
+  - Verifies whether the data satisfies K-Anonymity.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Bin Creation
+- **`createBinsForColumn(df: DataFrame, column: string, numBins: number): number[]`**
+  - Divides numeric data into bins based on the specified number of bins.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Information Loss Calculation
+- **`calculateObjectiveFunction(df: DataFrame, listColumnsOrdinalInt: string[], listBinsColumnsOrdinalInt: BinMapping): number`**
+  - Calculates information loss and row equivalence loss.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Bin Optimization
+- **`getSatifiedKBins(df: DataFrame, selectColumn: string, max_times: number, k: number): number[]`**
+  - Finds bins that satisfy K-Anonymity for a single column.
+- **`getSatifiedKBinsMultiColumns(df: DataFrame, selectColumns: string[], max_times: number, k: number): BinMapping`**
+  - Optimizes bins for multiple columns to meet K-Anonymity.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Utility Functions
+- **`exportToCSV(data: any[], filename: string)`**
+  - Exports data to a CSV file.
+
+## React Component: `Kano`
+### Props
+- **`df: DataFrame`** - Input data in column-oriented format.
+- **`selectedColumns: string[]`** - Columns to anonymize.
+- **`k: number`** *(Optional)* - Minimum K-Anonymity value (default: 2).
+
+### State
+- **`anonymizedData`** - Resulting anonymized dataset.
+- **`groupedData`** - Grouped data after anonymization.
+- **`objectiveValue`** - Calculated information loss.
+
+### Features
+- Renders tables for anonymized and grouped data.
+- Allows data export to CSV.
+- Dynamically updates based on `df`, `selectedColumns`, and `k`.
+
+### Example UI Structure
+- **Selected Columns**
+- **K-Value**
+- **Degree of Information Loss**
+- **Anonymized Data Table**
+- **Grouped Data Table**
+- **Export Buttons**
+
+---
+
+## Exported Component
+```javascript
+export default Kano;
