@@ -1,4 +1,26 @@
-# Code Overview: K-Anonymization with React
+# Steps to Create Data Privacy with K-Anonymization
+
+### 1. Select K Value
+- **Definition**: The K value ensures at least `k` rows in the dataset have identical quasi-identifiers after anonymization.
+- **Example**: 
+  - Original data:
+    ```
+    age: 30, 31, 41, 42
+    ```
+  - Anonymized data with `k=2`:
+    ```
+    age: 30-40, 30-40, 40-50, 40-50
+    ```
+
+*Note*: Some data may not satisfy the `k` condition, depending on the dataset structure.
+
+---
+
+### 2. Choose Your CSV File
+- **Upload**: Select the CSV file containing the dataset to be anonymized.
+- **Columns**: Identify the quasi-identifiers (columns to be anonymized).
+
+# Code Overview: K-Anonymization
 
 This code implements K-Anonymization functionality in React, including bin creation, data generalization, information loss calculation, and a UI component for displaying and exporting results. Below is a breakdown of the functionality:
 
