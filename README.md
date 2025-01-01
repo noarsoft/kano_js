@@ -20,6 +20,12 @@
 - **Upload**: Select the CSV file containing the dataset to be anonymized.
 - **Columns**: Identify the quasi-identifiers (columns to be anonymized).
 
+---
+
+### Learn More
+Visit [Noarsoft Privacy Tools](https://noarsoft.github.io/) for more resources and tools to enhance data privacy.
+
+
 # Code Overview: K-Anonymization
 
 This code implements K-Anonymization functionality in React, including bin creation, data generalization, information loss calculation, and a UI component for displaying and exporting results. Below is a breakdown of the functionality:
