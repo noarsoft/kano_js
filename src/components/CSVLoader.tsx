@@ -102,7 +102,7 @@ const CSVLoader: React.FC = () => {
           *Note: Some data might not be converted atleast 2 (k=2) rows.
         </p>
         <h3>2. Choose your csv files.</h3>
-        <h3>The example data is <a>here</a></h3>
+        <h3>The example data is <a target="_blank" href="https://github.com/noarsoft/kano_js/blob/main/src/assets/test_data.csv">here</a></h3>
       </div>
 
       <div>
